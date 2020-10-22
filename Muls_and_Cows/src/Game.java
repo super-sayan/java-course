@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Game {
 	public static void main(String[] args) {
-		System.out.println("Âûáåðèòå óðîâåíü ñëîæíîñòè: 3, 4 èëè 5");
+		System.out.println("Выберите уровень сложности: 3, 4 или 5");
 		Scanner dif = new Scanner(System.in);
 		int Difficulty = dif.nextInt();
 		int[] Array = new int[Difficulty];
@@ -40,8 +40,10 @@ public class Game {
 				else
 					Try++;
 			}
-			if(Number.compareTo(concede)==0)
+			if(Number.compareTo(concede)==0){
+				System.out.println("Спасибо за игру!");
 				break;
+			}
 			int Muls = 0;
 			int Cows = 0;
 			for (int k = 0; k < Difficulty; k++) {
