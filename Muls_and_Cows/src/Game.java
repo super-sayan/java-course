@@ -1,11 +1,9 @@
-
-//using Integer.parseInt() method 
 import java.util.Random;
 import java.util.Scanner;
 
 public class Game {
 	public static void main(String[] args) {
-		System.out.println("Выберите уровень сложности: 3, 4 или 5");
+		System.out.println("Г‚Г»ГЎГҐГ°ГЁГІГҐ ГіГ°Г®ГўГҐГ­Гј Г±Г«Г®Г¦Г­Г®Г±ГІГЁ: 3, 4 ГЁГ«ГЁ 5");
 		Scanner dif = new Scanner(System.in);
 		int Difficulty = dif.nextInt();
 		int[] Array = new int[Difficulty];
@@ -18,27 +16,25 @@ public class Game {
 					if (Array[i] == Array[j])
 						i--;
 		}
-		for (int m = 0; m < Difficulty; m++)
-			System.out.print(Array[m]);
 		boolean end = false;
-		String concede="сдаюсь";
+		String concede="СЃРґР°СЋСЃСЊ";
 		while (end==false) {
 			int counter = 0, Try = 0;
 			String Number = "";
 			while (counter == 0) {
-				System.out.println("Введите число из " + Difficulty + " цифр");
+				System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ РёР· " + Difficulty + " С†РёС„СЂ");
 				Scanner num = new Scanner(System.in);
 				Number = num.next();
 				counter++;
 				if(Number.compareTo(concede)==0) {
-					System.out.print("Было загадано число: ");
+					System.out.print("Р‘С‹Р»Рѕ Р·Р°РіР°РґР°РЅРѕ С‡РёСЃР»Рѕ: ");
 					for (int m = 0; m < Difficulty; m++)
 						System.out.print(Array[m]);
 					end=true;
 					break;
 				}
 				else if (Number.length() != Difficulty) {
-					System.out.println("Введено число несоответствующее заданной сложности");
+					System.out.println("Р’РІРµРґРµРЅРѕ С‡РёСЃР»Рѕ РЅРµ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РµР№ СѓРєР°Р·Р°РЅРЅРѕР№ СЃР»РѕР¶РЅРѕСЃС‚Рё");
 					counter = 0;
 				} 
 				else
@@ -50,7 +46,6 @@ public class Game {
 			int Cows = 0;
 			for (int k = 0; k < Difficulty; k++) {
 				int d= Character.getNumericValue(Number.charAt(k));
-				System.out.print(d);
 				for (int g = 0; g < Difficulty; g++)
 					if (Array[g] == d) {
 						if (g == k)
@@ -61,23 +56,23 @@ public class Game {
 			}
 			if (Muls == Difficulty) {
 				if(Try==1)
-					System.out.println("Поздравляю! Вы верно отгадали число! На это вам понадобилось " + Try + " попытка");
+					System.out.println("РџРѕР·РґСЂР°РІР»СЏСЋ! Р’С‹ СѓРіР°РґР°Р»Рё Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ! Р’Р°Рј РїРѕС‚СЂРµР±РѕРІР°Р»Р°СЃСЊ " + Try + " РїРѕРїС‹С‚РєР°");
 				else if(Try>1 && Try<5)
-					System.out.println("Поздравляю! Вы верно отгадали число! На это вам понадобилось " + Try + " попытки");
+					System.out.println("РџРѕР·РґСЂР°РІР»СЏСЋ! Р’С‹ СѓРіР°РґР°Р»Рё Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ! Р’Р°Рј РїРѕС‚СЂРµР±РѕРІР°Р»РѕСЃСЊ " + Try + " РїРѕРїС‹С‚РєРё");
 				else 
-					System.out.println("Поздравляю! Вы верно отгадали число! На это вам понадобилось " + Try + " попыток");
+					System.out.println("РџРѕР·РґСЂР°РІР»СЏСЋ! Р’С‹ СѓРіР°РґР°Р»Рё Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ! Р’Р°Рј РїРѕС‚СЂРµР±РѕРІР°Р»РѕСЃСЊ " + Try + " РїРѕРїС‹С‚РѕРє");
 				end=true;
 				break;
 			}
 			if (Cows == 1)
-				System.out.print("Вы отгадали " + Cows + " корову и ");
+				System.out.print("Р’С‹ СѓРіР°РґР°Р»Рё " + Cows + " РєРѕСЂРѕРІСѓ Рё ");
 			else
-				System.out.print("Вы отгадали " + Cows + " коров и ");
+				System.out.print("Р’С‹ СѓРіР°РґР°Р»Рё " + Cows + " РєРѕСЂРѕРІС‹ Рё ");
 			if (Muls == 0)
-				System.out.println(Muls + " быков.");
+				System.out.println(Muls + " Р±С‹РєРѕРІ.");
 			else
-				System.out.println(Muls + " быка.");
-			System.out.println("Вы можете ввести сдаюсь, если хотите завершить игру");
+				System.out.println(Muls + " Р±С‹РєР°.");
+			System.out.println("Р’С‹ РјРѕР¶РµС‚Рµ РІРІРµСЃС‚Рё СЃРґР°СЋСЃСЊ, РµСЃР»Рё С…РѕС‚РёС‚Рµ Р·Р°РІРµСЂС€РёС‚СЊ РёРіСЂСѓ");
 		}
 	}
 }
