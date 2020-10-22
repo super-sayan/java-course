@@ -44,14 +44,14 @@ public class Game {
 				System.out.println("Спасибо за игру!");
 				break;
 			}
-			int Muls = 0;
+			int Bulls = 0;
 			int Cows = 0;
 			for (int k = 0; k < Difficulty; k++) {
 				int d= Character.getNumericValue(Number.charAt(k));
 				for (int g = 0; g < Difficulty; g++)
 					if (Array[g] == d) {
 						if (g == k)
-							Muls++;
+							Bulls++;
 						else
 							Cows++;
 					}
@@ -70,10 +70,10 @@ public class Game {
 				System.out.print("Вы угадали " + Cows + " корову и ");
 			else
 				System.out.print("Вы угадали " + Cows + " коровы и ");
-			if (Muls == 0)
-				System.out.println(Muls + " быков.");
+			if (Bulls == 0)
+				System.out.println(Bulls + " быков.");
 			else
-				System.out.println(Muls + " быка.");
+				System.out.println(Bulls + " быка.");
 			System.out.println("Вы можете ввести сдаюсь, если хотите завершить игру");
 		}
 	}
